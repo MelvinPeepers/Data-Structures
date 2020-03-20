@@ -101,6 +101,16 @@ class BinarySearchTree:
     # in an iterative breadth first traversal
 
     def bft_print(self, node):
+        queue = []
+        if node:
+            queue.append(node)
+        while queue:
+            current = queue.pop(0)
+            print(current.value)
+            if current.left:
+                queue.append(current.left)
+            if current.right:
+                queue.append(current.right)
         # create a queue for nodes
         # add current node to queue
         # while the queue isn't empty:
@@ -109,27 +119,31 @@ class BinarySearchTree:
         # add its children
         # i.e add left (if you can)
         # add right (if you can)
-        pass
 
-    # Print the value of every node, starting with the given node,
-    # in an iterative depth first traversal
+        # Print the value of every node, starting with the given node,
+        # in an iterative depth first traversal
+
     def dft_print(self, node):
         # create a node_stack
+        stack = [node]
         # push the current node onto stack
         # while we have items on the stack
-
+        while stack:
+            current = stack.pop()
         # push the left value of current node if we can and loop
-
+            if current.left:
+                stack.append(current.left)
+            if current.right:
+                stack.append(current.right)
         # print the current value and pop it off
-
+            print(current.value)
         # push the right value of the current node if we can and loop
-
-        pass
 
     # STRETCH Goals -------------------------
     # Note: Research may be required
 
     # Print Pre-order recursive DFT
+
     def pre_order_dft(self, node):
         pass
 
