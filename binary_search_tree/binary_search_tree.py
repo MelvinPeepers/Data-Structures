@@ -55,9 +55,9 @@ class BinarySearchTree:
 
         # if smaller, but we can't go left, return false
         # bigger, but we can't go right, return false
-        pass
 
     # Return the maximum value found in the tree
+
     def get_max(self):
         if self.right is None:
             return self.value  # base case
